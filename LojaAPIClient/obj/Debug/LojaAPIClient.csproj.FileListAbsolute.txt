@@ -1,0 +1,6 @@
+c:\users\notgnihsaw-pc\documents\visual studio 2015\Projects\LojaAPIClient\LojaAPIClient\bin\Debug\LojaAPIClient.exe.config
+C:\Users\notgnihsaw-pc\Documents\Visual Studio 2015\Projects\LojaAPIClient\LojaAPIClient\bin\Debug\LojaAPIClient.exe
+C:\Users\notgnihsaw-pc\Documents\Visual Studio 2015\Projects\LojaAPIClient\LojaAPIClient\bin\Debug\LojaAPIClient.pdb
+C:\Users\notgnihsaw-pc\Documents\Visual Studio 2015\Projects\LojaAPIClient\LojaAPIClient\obj\Debug\LojaAPIClient.csprojResolveAssemblyReference.cache
+C:\Users\notgnihsaw-pc\Documents\Visual Studio 2015\Projects\LojaAPIClient\LojaAPIClient\obj\Debug\LojaAPIClient.exe
+C:\Users\notgnihsaw-pc\Documents\Visual Studio 2015\Projects\LojaAPIClient\LojaAPIClient\obj\Debug\LojaAPIClient.pdb
