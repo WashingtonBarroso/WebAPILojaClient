@@ -11,7 +11,76 @@ namespace LojaAPIClient
     class Program
     {
 
-        static void Main(string [] args)
+        static void Main(string[] args)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://localhost:30176/api/carrinho/1/produto/6237/quantidade");
+            request.Method = "PUT";
+
+            string xml = "<Produto xmlns:i='http://www.w3.org/2001/XMLSchema-instance' xmlns='http://schemas.datacontract.org/2004/07/Loja.Models'><Id>6237</Id><Nome>Videogame 4</Nome><Preco>100</Preco><Quantidade>1000</Quantidade></Produto>";
+
+            byte[] xmlbytes = Encoding.UTF8.GetBytes(xml);
+            request.GetRequestStream().Write(xmlbytes, 0, xmlbytes.Length);
+
+            request.ContentType = "application/xml";
+
+            HttpWebResponse response = (HttpWebResponse) request.GetResponse();
+
+            Console.WriteLine(response.StatusCode);
+            Console.ReadLine();
+
+        }
+
+        static void TestDelete(string[] args)
+        { 
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://localhost:30176/api/carrinho/1/produto/3467");
+            request.Method = "DELETE";
+     
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            
+            Console.WriteLine(response.StatusCode);
+            Console.Read();
+
+        }
+
+        static void TestGetStatus(string[] args)
+        {
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://localhost:30176/api/carrinho/200");
+            request.Method = "GET";
+            request.Accept = "application/xml";
+            request.ContentType = "application/xml";
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+            Console.WriteLine(response.StatusCode);
+            Console.WriteLine(response.Headers["Location"]);
+            Console.Read();
+
+        }
+
+        static void TestPost(string [] args)
+        {
+         
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://localhost:30176/api/carrinho/1");
+            request.Method = "POST";
+
+            string xml = "<Carrinho xmlns:i='http://www.w3.org/2001/XMLSchema-instance' xmlns='http://schemas.datacontract.org/2004/07/Loja.Models'><Endereco i:nil='true'/><Id>1</Id><Produtos><Produto><Id>123</Id><Nome>Produto criado com POST</Nome><Preco>100</Preco><Quantidade>1</Quantidade></Produto></Produtos></Carrinho> ";
+
+            byte[] xmlbytes = Encoding.UTF8.GetBytes(xml);
+            request.GetRequestStream().Write(xmlbytes, 0, xmlbytes.Length);
+
+            request.ContentType = "application/xml";
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+            Console.WriteLine(response.StatusCode);
+            Console.WriteLine(response.Headers["Location"]);
+            Console.Read();
+
+        }
+
+        static void TestPostXML(string[] args)
         {
             string conteudo;
 
@@ -37,7 +106,7 @@ namespace LojaAPIClient
 
         }
 
-        static void TestPOSTJson(string[] args)
+        static void TestPostJson(string[] args)
         {
             string conteudo;
 
